@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f5">
+  <title>A little note for Sourabh ♡</title>
+  <style>
+    :root {
+      --pink: #e98aaa;
+      --deep: #a94f70;
+      --ink: #674653;
+      --paper: #fffafc;
+      --blush: #fff0f5;
+      --line: #f3cbd8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      padding: 28px 16px; color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at 12% 18%, #ffffff 0 4px, transparent 5px),
+        radial-gradient(circle at 88% 76%, #ffffff 0 5px, transparent 6px),
+        linear-gradient(145deg, #fff7fa, #ffe8f0 55%, #fff8fb);
+      background-size: 42px 42px, 56px 56px, auto;
+    }
+    .card {
+      width: min(100%, 520px); position: relative; overflow: hidden;
+      padding: 38px 28px 32px; text-align: center;
+      background: rgba(255,250,252,.94); border: 1px solid var(--line);
+      border-radius: 28px; box-shadow: 0 18px 55px #b85d7b20;
+    }
+    .bow { font-size: 48px; line-height: 1; margin-bottom: 12px; }
+    .eyebrow {
+      text-transform: uppercase; letter-spacing: .18em; font: 11px Arial, sans-serif;
+      color: #c47791; margin: 0 0 13px;
+    }
+    h1 { color: var(--deep); font-size: clamp(32px, 8vw, 46px); margin: 0 0 12px; font-weight:  normal; }
+    .intro { font-size: 18px; line-height: 1.65; margin: 0 auto; max-width: 390px; }
+    .divider { color: var(--pink); letter-spacing: .35em; margin: 22px 0; }
+    .note {
+      text-align: left; line-height: 1.8; font-size: 17px;
+      background: #fff2f6; border: 1px dashed #edb6c9;
+      border-radius: 18px; padding: 20px 21px; margin: 0 auto;
+    }
+    .signoff { margin: 19px 0 0; color: var(--deep); font-style: italic; font-size: 18px; }
+    .question { margin: 28px 0 14px; font-size: 22px; color: var(--deep); }
+    .buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    button {
+      border: 0; border-radius: 999px; padding: 13px 21px; cursor: pointer;
+      font: 600 14px Arial, sans-serif; transition: transform .18s, box-shadow .18s;
+    }
+    button:hover { transform: translateY(-2px); box-shadow: 0 7px 18px #a94f7020; }
+    .yes { background: var(--pink); color: white; }
+    .time { background: white; color: var(--deep); border: 1px solid var(--line); }
+    #reply { min-height: 48px; margin: 18px 0 0; line-height: 1.55; color: var(--deep); font-size: 16px; }
+    .footer { margin-top: 20px; color: #bd8296; font: 11px Arial, sans-serif; letter-spacing: .08em; }
+    .heart { position: absolute; opacity: .55; color: #e9a0b8; font-size: 20px; }
+    .h1 { top: 20px; left: 20px; } .h2 { top: 25px; right: 22px; }
+    @media (max-width: 420px) { .card { padding: 32px 20px 26px; } .note { font-size: 16px; } }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="heart h1">♡</span><span class="heart h2">✧</span>
+    <div class="bow" aria-hidden="true">🎀</div>
+    <p class="eyebrow">a tiny note, just for you</p>
+    <h1>I'm sorry, Sourabh ♡</h1>
+    <p class="intro">I wish today had gone differently. I really was looking forward to seeing you.</p>
+    <div class="divider">♡　୨୧　♡</div>
+    <div class="note">
+      I know you made the effort to travel all that way, and I don't take that lightly.
+      I'm sorry the plan fell through. It wasn't because I didn't want to meet you —
+      I did. Things at home didn't work out, and I got overwhelmed by my past
+      experience. That fear was about what I've been through, not a judgement
+      about you.<br><br>
+      I hope we get another chance to meet when the timing works and I can feel
+      comfortable and enjoy it properly. No pressure to reply right away. I just
+      wanted you to know that your effort meant a lot to me.
+    </div>
+    <p class="signoff">— from someone who really did want today to happen ♡</p>
+    <p class="question">Can we try again sometime?</p>
+    <div class="buttons">
+      <button class="yes" onclick="respond('yes')">I'd like that ♡</button>
+      <button class="time" onclick="respond('time')">I need a little time</button>
+    </div>
+    <p id="reply" role="status" aria-live="polite"></p>
+    <div class="footer">MADE WITH CARE · NO PRESSURE, JUST HONESTY</div>
+  </main>
+  <script>
+    function respond(choice) {
+      const reply = document.getElementById('reply');
+      if (choice === 'yes') {
+        reply.textContent = "That makes me happy. We'll plan something when it works for both of us. ♡";
+      } else {
+        reply.textContent = "Of course. Take the time you need — I just wanted you to know how I feel. ♡";
+      }
+    }
+  </script>
+</body>
+</html>
